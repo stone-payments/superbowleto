@@ -46,8 +46,8 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v3
       id: configure-ecr
       with:
-        aws-access-key-id: ${{ secrets.DOCKER_IMAGES_AWS_PULL_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.DOCKER_IMAGES_AWS_PULL_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.EXPORTED_PAGARME_DOCKER_IMAGES_AWS_PULL_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.EXPORTED_PAGARME_DOCKER_IMAGES_AWS_PULL_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
         mask-aws-account-id: "no"
 
@@ -90,4 +90,4 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.EXPORTED_PAGARME_SONAR_TOKEN }}
